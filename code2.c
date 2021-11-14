@@ -5,7 +5,8 @@
 
 int main() {
 	
-	printf("Welcome to our channel");
+	printf("Welcome to our channel\n");
+	printf("I hope you enjoyed from this video");
 	
 	return 0;
 }
