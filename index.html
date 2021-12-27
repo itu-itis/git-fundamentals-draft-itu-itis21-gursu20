@@ -4,31 +4,16 @@
    <head>
        <title> My Web Page </title>
        <link rel="stylesheet" type="text/css" href="./all.css">
-       <!-- This is a comment line -->
-       <!--	
-       <style type="text/css">
-          h1 {
-		font-size: 24 pt;
-	  	color: red;
-		text-decoration: underline;
-		font-family: Tahoma, Helvetica, sans-serif; 	
-	  }
-
-	  em {
-		font-style: normal;
-		color: green;
-		background-color: lightgrey;
-		font-weight: bold;
-	  }
-
-	</style>
-        -->	
+       
    </head>
-    <body>
+    <body onload="document.body.style.backgroundColor='pink' ; sayHello()"
+		  onresize="document.body.style.backgroundColor='lightblue'"
+		  onkeydown="document.body.style.backgroundColor='white'"
+		  onkeyup="document.body.style.backgroundColor='lightyellow'">
 	<p>
 	    <strong> Introduction to Information Systems </strong>
 	</p>
-	<p class = "centered">
+	<p class = "centered" onmouseover="document.querySelector('.centered').style.font='bold 20pt arial, serif'">
 	    <em>
 	    Berkay Gürsu
 	    <br>
@@ -38,41 +23,51 @@
 
 	<p> Evolution of homo species </p>
 	
-	<ul>
+	<ul id='ul-01' onmouseover="document.getElementById('ul-01').style.backgroundColor='purple'">
 	    <li> Homo habilis (able man)  </li>
 	    <li> Homo erectus (upright man)  </li>
-            <li> Homo neanderthalensis  </li>
-            <li> Homo floresiensis (hobbit)  </li>
-            <li> Homo sapiens (wise man)  </li>
-	    <ul>		
-		<li> Homo sapiens sapiens  </li>
+        <li> Homo neanderthalensis  </li>
+        <li> Homo floresiensis (hobbit)  </li>
+        <li> Homo sapiens (wise man)  </li>
+	    <ul id='ul-02' onclick="document.getElementById('ul-02').style.backgroundColor='orange'">		
+			<li> Homo sapiens sapiens  </li>
 	    </ul>	
 	</ul>
-
+	
 
 <!-- <p> <img src="evolution-diagram.png"> </p> -->
 
-<h1> Human Evolution </h1>
+<h1 onmouseover="style.color='orange'; style.backgroundColor='lightgreen'"
+	onmouseout="stye.color='red'; style.backgroundColor='white'"><strong>Human Evolution</strong></h1>
+
+
+<p><img src="evolution-diagram.png"/></p>
+
 
 <p>
-	You can find the source of the image by clicking the link:
+	You can find link of the image below:
 	<a href="https://www.biologyonline.com/dictionary/homo-sapiens-sapiens"> Biology Online. </a>
 </p>
 
+
+
+<!--
 <p>
 	The image below is a link, try it.
 	<a href="https://www.biologyonline.com/dictionary/homo-sapiens-sapiens">
 		<img src="evolution-diagram.png"/>
 	</a>
 </p>
-
+-->
 
 
 <h2> <strong> The clickable image </strong> </h1>
 <p>
-	The image below is a link, try it.
+	The image is clickable, click on it and try.
 	<a href="https://www.biologyonline.com/dictionary/homo-sapiens-sapiens">
-		<img src="evolution-diagram.png"/>
+		<img id='img-01' alt='You are about to leave our webpage.' 
+		onclick="alert(document.getElementById('img-01').alt)"
+		src="evolution-diagram.png"/>
 	</a>
 </p>
 
@@ -117,8 +112,11 @@ These primates include humans,
 
 <pre>
 
+<script>
+	function sayHello() {
+		alert("Welcome aboard!");
+	}
+</script>
 
-
-
-    </body>
+</body>
 </html>
